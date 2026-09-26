@@ -1,0 +1,401 @@
+.assembly-hero {
+  height: calc(100svh - 154px);
+  min-height: 630px;
+  max-height: 1060px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #19201f;
+}
+.assembly-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background: linear-gradient(180deg, #242b2a, #151b1b 75%);
+  overflow: hidden;
+}
+.assembly-backdrop > span {
+  position: absolute;
+  bottom: 22%;
+  width: 11%;
+  height: 58%;
+  background: linear-gradient(90deg, #11171633, #19201f00);
+  border-left: 1px solid #ffffff05;
+  transform: skewY(-10deg);
+}
+.assembly-backdrop > span:nth-child(1) {
+  left: 3%;
+  height: 40%;
+}
+.assembly-backdrop > span:nth-child(2) {
+  left: 19%;
+  height: 63%;
+}
+.assembly-backdrop > span:nth-child(3) {
+  left: 46%;
+  height: 72%;
+}
+.assembly-backdrop > span:nth-child(4) {
+  left: 68%;
+  height: 61%;
+}
+.assembly-backdrop > span:nth-child(5) {
+  left: 89%;
+  height: 48%;
+}
+.assembly-heading {
+  position: absolute;
+  top: 27px;
+  left: 6%;
+  right: 6%;
+  text-align: center;
+  z-index: 1;
+  pointer-events: none;
+}
+.assembly-heading .eyebrow {
+  justify-content: center;
+  color: #acb4ad;
+  font-size: 8px;
+}
+.assembly-heading h1 {
+  font-family: var(--display);
+  font-size: 140px;
+  line-height: 0.9;
+  font-weight: 800;
+  margin: 18px 0 0;
+  color: #e1e5de;
+}
+.assembly-heading h1 > span {
+  color: var(--red);
+}
+.assembly-kanji {
+  position: absolute;
+  right: 1%;
+  top: 18px;
+  font-family: serif;
+  font-size: 64px;
+  color: #b65546;
+  opacity: 0.7;
+}
+.assembly-stage {
+  position: absolute;
+  inset: 148px 2% 107px;
+  z-index: 2;
+}
+.assembly-stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+}
+.assembly-fallback {
+  position: absolute;
+  inset: 175px 8% 153px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1;
+}
+.assembly-fallback img {
+  width: 22%;
+  height: 92%;
+  object-fit: contain;
+  min-width: 0;
+  margin-inline: -1%;
+}
+.assembly-fallback .assembly-fallback-itachi {
+  height: 100%;
+  z-index: 2;
+}
+.assembly-ground {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 105px;
+  height: 45px;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(transparent, #151b1b);
+}
+.assembly-footer {
+  position: absolute;
+  z-index: 4;
+  bottom: 30px;
+  left: 6%;
+  right: 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+}
+.assembly-intro {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.assembly-intro p {
+  font-family: var(--serif);
+  font-size: 23px;
+  line-height: 1.25;
+  color: #eee8df;
+}
+.assembly-intro p > span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: #a1ada6;
+}
+.assembly-intro .button {
+  min-height: 46px;
+  font-size: 11px;
+  padding-inline: 18px;
+  gap: 22px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.assembly-roster {
+  width: 355px;
+  max-width: 100%;
+}
+.assembly-roster-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #c8d4c426;
+}
+.assembly-roster-label > .micro-label {
+  font-size: 7px;
+  color: #87978e;
+}
+.assembly-roster-label a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--serif);
+  font-size: 23px;
+}
+.assembly-roster-label a svg {
+  width: 16px;
+  height: 16px;
+}
+.assembly-select {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 9px;
+}
+.assembly-select button {
+  background: none;
+  color: #91a197;
+  padding: 4px 0;
+  font-size: 10px;
+  border-bottom: 1px solid transparent;
+}
+.assembly-select button[aria-pressed='true'] {
+  color: #f4a995;
+  border-color: #ca6958;
+}
+.assembly-select button:hover {
+  color: #efe8de;
+}
+.assembly-edition {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  font-family: var(--mono);
+  font-size: 7px;
+  writing-mode: vertical-rl;
+  color: #71877a;
+}
+@media (min-width: 1600px) {
+  .assembly-heading h1 {
+    font-size: 170px;
+  }
+  .assembly-stage {
+    top: 170px;
+  }
+  .assembly-footer {
+    bottom: 40px;
+  }
+}
+@media (max-width: 1100px) {
+  .assembly-heading h1 {
+    font-size: 124px;
+  }
+  .assembly-intro {
+    display: block;
+  }
+  .assembly-intro .button {
+    margin-top: 14px;
+  }
+  .assembly-roster {
+    width: 310px;
+  }
+  .assembly-stage {
+    top: 141px;
+    bottom: 165px;
+  }
+  .assembly-ground {
+    bottom: 165px;
+  }
+}
+@media (max-width: 760px) {
+  .assembly-hero {
+    height: calc(100svh - 123px);
+    min-height: 0;
+    max-height: 900px;
+  }
+  .assembly-heading {
+    top: 29px;
+    left: 5%;
+    right: 5%;
+  }
+  .assembly-heading h1 {
+    font-size: 83px;
+    margin-top: 16px;
+  }
+  .assembly-heading .eyebrow {
+    font-size: 6px;
+    gap: 8px;
+  }
+  .assembly-heading .red-dash {
+    width: 14px;
+    height: 2px;
+  }
+  .assembly-kanji {
+    display: none;
+  }
+  .assembly-stage {
+    inset: 126px -2% 184px;
+  }
+  .assembly-fallback {
+    inset: 154px 3% 205px;
+  }
+  .assembly-ground {
+    bottom: 181px;
+    height: 28px;
+  }
+  .assembly-footer {
+    left: 7%;
+    right: 7%;
+    bottom: 23px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+  .assembly-intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .assembly-intro p {
+    font-size: 19px;
+  }
+  .assembly-intro p > span {
+    font-size: 8px;
+  }
+  .assembly-intro .button {
+    margin: 0;
+    min-height: 43px;
+    font-size: 9px;
+    padding-inline: 12px;
+    gap: 9px;
+  }
+  .assembly-intro .button svg {
+    width: 16px;
+  }
+  .assembly-roster {
+    width: 100%;
+  }
+  .assembly-roster-label {
+    padding-bottom: 7px;
+  }
+  .assembly-roster-label a {
+    font-size: 20px;
+  }
+  .assembly-roster-label > .micro-label {
+    font-size: 6px;
+  }
+  .assembly-select {
+    gap: 9px;
+    padding-top: 7px;
+  }
+  .assembly-select button {
+    font-size: 9px;
+  }
+  .assembly-edition {
+    left: 9px;
+    top: 38%;
+    font-size: 5px;
+  }
+}
+@media (max-width: 380px) {
+  .assembly-heading h1 {
+    font-size: 71px;
+  }
+  .assembly-intro p {
+    font-size: 17px;
+  }
+  .assembly-intro p > span {
+    font-size: 7px;
+  }
+  .assembly-intro .button {
+    font-size: 8px;
+    padding-inline: 10px;
+  }
+}
+@media (max-width: 760px) and (max-height: 700px) {
+  .assembly-heading {
+    top: 20px;
+  }
+  .assembly-heading h1 {
+    font-size: 69px;
+    margin-top: 13px;
+  }
+  .assembly-stage {
+    top: 96px;
+    bottom: 161px;
+  }
+  .assembly-footer {
+    bottom: 15px;
+    gap: 12px;
+  }
+  .assembly-ground {
+    bottom: 160px;
+  }
+  .assembly-intro p {
+    font-size: 17px;
+  }
+  .assembly-intro .button {
+    min-height: 38px;
+  }
+  .assembly-fallback {
+    top: 120px;
+    bottom: 190px;
+  }
+}
+@media (max-width: 760px) and (max-height: 590px) {
+  .assembly-heading {
+    top: 15px;
+  }
+  .assembly-heading h1 {
+    font-size: 61px;
+  }
+  .assembly-stage {
+    top: 84px;
+    bottom: 151px;
+  }
+  .assembly-footer {
+    bottom: 12px;
+    gap: 9px;
+  }
+  .assembly-intro p > span {
+    display: none;
+  }
+  .assembly-ground {
+    bottom: 149px;
+  }
+}

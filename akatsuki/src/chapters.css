@@ -1,0 +1,605 @@
+.chapter-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 6%;
+  background: #171615;
+  border-block: 1px solid var(--line);
+}
+.chapter-nav > span {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--muted);
+}
+.chapter-nav > div {
+  display: flex;
+  gap: 30px;
+}
+.chapter-nav a {
+  font-size: 12px;
+  display: flex;
+  gap: 9px;
+  align-items: baseline;
+}
+.chapter-nav a span {
+  font-family: var(--mono);
+  font-size: 8px;
+  color: var(--red);
+}
+.chapter-nav a:first-child {
+  color: #eb8174;
+}
+.chapter-nav a:hover {
+  color: var(--red);
+}
+.character-chapter {
+  --chapter-accent: #baa1e3;
+  --chapter-bg: #18171d;
+  --chapter-ink: #f0eaf6;
+  --chapter-muted: #b8adca;
+  position: relative;
+  isolation: isolate;
+  min-height: 840px;
+  overflow: hidden;
+  background: var(--chapter-bg);
+  color: var(--chapter-ink);
+}
+.chapter-texture {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+}
+.chapter-pain .chapter-texture {
+  background: repeating-linear-gradient(
+    102deg,
+    transparent 0 45px,
+    #bba8df09 46px 47px,
+    transparent 48px 89px
+  );
+}
+.chapter-art {
+  position: absolute;
+  inset: 0 0 0 38%;
+  z-index: -2;
+}
+.chapter-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+}
+.chapter-art-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, var(--chapter-bg), transparent 45%),
+    linear-gradient(
+      0deg,
+      var(--chapter-bg),
+      transparent 35%,
+      transparent 65%,
+      var(--chapter-bg)
+    );
+}
+.chapter-pain .chapter-art img {
+  filter: brightness(1.5) saturate(0.6);
+}
+.chapter-canvas {
+  position: absolute;
+  inset: 70px 1% 90px 43%;
+  z-index: -1;
+  pointer-events: none;
+}
+.chapter-canvas canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.chapter-topline {
+  position: relative;
+  margin: 0 6%;
+  padding: 30px 0 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--chapter-accent) 26%, transparent);
+}
+.chapter-topline .eyebrow {
+  font-size: 9px;
+  color: var(--chapter-muted);
+}
+.chapter-ring {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--chapter-accent);
+  font-family: var(--mono);
+  font-size: 8px;
+}
+.chapter-ring > span {
+  font-family: var(--serif);
+  font-size: 30px;
+}
+.chapter-copy {
+  position: relative;
+  width: 47%;
+  padding: 68px 0 0 8%;
+  z-index: 1;
+}
+.chapter-copy > .eyebrow {
+  color: var(--chapter-accent);
+  font-size: 8px;
+}
+.chapter-copy h2 {
+  font-family: var(--display);
+  font-size: 110px;
+  font-weight: 600;
+  line-height: 0.95;
+  margin: 22px 0 24px;
+}
+.chapter-copy h2 > span,
+.chapter-copy h2 > em {
+  display: block;
+}
+.chapter-copy h2 > em {
+  font-family: var(--serif);
+  font-size: 76px;
+  font-weight: 500;
+  color: var(--chapter-accent);
+}
+.chapter-lead {
+  font-family: var(--serif);
+  font-size: 28px;
+  line-height: 1.2;
+}
+.chapter-story {
+  font-size: 12px;
+  line-height: 1.85;
+  color: var(--chapter-muted);
+  max-width: 330px;
+  margin: 22px 0 28px;
+}
+.chapter-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 20px;
+}
+.ability-button {
+  background: var(--chapter-accent);
+  color: var(--chapter-bg);
+  min-height: 49px;
+  font-size: 11px;
+  gap: 25px;
+  padding-inline: 20px;
+}
+.ability-button:hover {
+  background: var(--chapter-ink);
+}
+.ability-button:disabled {
+  opacity: 0.75;
+}
+.chapter-actions .text-button {
+  font-size: 10px;
+  color: var(--chapter-muted);
+  gap: 8px;
+}
+.chapter-actions .text-button:hover {
+  color: var(--chapter-accent);
+}
+.chapter-actions .text-button svg {
+  width: 16px;
+}
+.chapter-japanese {
+  position: absolute;
+  right: 5%;
+  top: 180px;
+  font-family: serif;
+  font-size: 36px;
+  writing-mode: vertical-rl;
+  color: var(--chapter-accent);
+  opacity: 0.75;
+}
+.chapter-bottom {
+  margin: 55px 6% 0;
+  padding: 22px 0;
+  display: flex;
+  gap: 45px;
+  align-items: flex-end;
+  border-top: 1px solid
+    color-mix(in srgb, var(--chapter-accent) 26%, transparent);
+}
+.chapter-bottom > div {
+  display: grid;
+  gap: 8px;
+  font-size: 11px;
+}
+.chapter-bottom .micro-label {
+  font-size: 7px;
+  color: var(--chapter-muted);
+}
+.chapter-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  max-width: 275px;
+  font-family: var(--mono);
+  font-size: 7px;
+  line-height: 1.7;
+  color: var(--chapter-muted);
+}
+.chapter-status .status-dot {
+  background: var(--chapter-accent);
+}
+.chapter-next {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 17px;
+  padding: 0 6% 25px;
+  color: var(--chapter-muted);
+  font-family: var(--mono);
+  font-size: 8px;
+}
+.chapter-next svg {
+  width: 15px;
+  height: 15px;
+}
+.chapter-next:hover {
+  color: var(--chapter-accent);
+}
+.chapter-tobi {
+  --chapter-accent: #d5a16a;
+  --chapter-bg: #101516;
+  --chapter-ink: #eeeae3;
+  --chapter-muted: #a3b1b1;
+}
+.chapter-tobi .chapter-texture {
+  background:
+    linear-gradient(90deg, #66888507 1px, transparent 1px),
+    linear-gradient(#66888507 1px, transparent 1px);
+  background-size: 65px 65px;
+  transform: perspective(500px) rotateY(-12deg) scale(1.2);
+}
+.chapter-tobi .chapter-copy {
+  margin-left: 52%;
+  padding-left: 0;
+  padding-right: 6%;
+  width: 48%;
+}
+.chapter-tobi .chapter-art {
+  inset: 65px 44% 105px 0;
+  display: grid;
+  place-items: center;
+}
+.chapter-tobi .chapter-art-shade {
+  display: none;
+}
+.chapter-tobi .chapter-art img {
+  width: auto;
+  max-width: 85%;
+  height: 82%;
+  object-fit: contain;
+  filter: none;
+}
+.chapter-tobi .chapter-canvas {
+  inset: 65px 44% 105px 0;
+}
+.chapter-tobi .chapter-copy h2 {
+  font-size: 124px;
+}
+.chapter-tobi .chapter-copy h2 > em {
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 27px;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+.chapter-tobi .chapter-japanese {
+  right: auto;
+  left: 4%;
+}
+.chapter-tobi.kamui-ready .chapter-art img {
+  opacity: 0;
+}
+.chapter-orochimaru {
+  --chapter-accent: #2c6a50;
+  --chapter-bg: #e0e8df;
+  --chapter-ink: #223b2e;
+  --chapter-muted: #506957;
+  color-scheme: light;
+}
+.chapter-orochimaru .chapter-texture {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0 4px,
+    #21493304 4px 5px
+  );
+}
+.chapter-orochimaru .chapter-art {
+  inset: 0 0 0 40%;
+}
+.chapter-orochimaru .chapter-art img {
+  filter: grayscale(0.8) sepia(0.15);
+  opacity: 0.36;
+  mix-blend-mode: multiply;
+  transition: opacity 1.3s;
+}
+.chapter-orochimaru .chapter-art-shade {
+  background:
+    linear-gradient(90deg, var(--chapter-bg), transparent 60%),
+    linear-gradient(
+      0deg,
+      var(--chapter-bg),
+      transparent 35%,
+      transparent 75%,
+      var(--chapter-bg)
+    );
+}
+.chapter-orochimaru .chapter-copy h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 91px;
+}
+.chapter-orochimaru .chapter-copy h2 > em {
+  font-size: 104px;
+  line-height: 0.9;
+}
+.chapter-orochimaru .chapter-canvas {
+  inset: 80px 0 90px 48%;
+}
+.chapter-orochimaru .ability-button {
+  color: #f1f6ef;
+}
+.chapter-orochimaru .ability-button:hover {
+  background: #17452f;
+}
+.chapter-orochimaru[data-active='true'] .chapter-art img {
+  opacity: 0.65;
+}
+.chapter-pain[data-active='true'] .chapter-texture {
+  animation: rain-repulse 2.4s ease-out both;
+}
+@keyframes rain-repulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1.25);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.reduced-motion .chapter-tobi.kamui-ready .chapter-art img {
+  opacity: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .chapter-tobi.kamui-ready .chapter-art img {
+    opacity: 0;
+  }
+}
+@media (min-width: 1600px) {
+  .chapter-copy {
+    padding-top: 86px;
+  }
+  .character-chapter {
+    min-height: 900px;
+  }
+  .chapter-copy h2 {
+    font-size: 124px;
+  }
+  .chapter-copy h2 > em {
+    font-size: 86px;
+  }
+  .chapter-tobi .chapter-copy h2 > em {
+    font-size: 30px;
+  }
+}
+@media (max-width: 1100px) {
+  .chapter-copy {
+    padding-left: 6%;
+    width: 49%;
+  }
+  .chapter-copy h2 {
+    font-size: 98px;
+  }
+  .chapter-copy h2 > em {
+    font-size: 69px;
+  }
+  .chapter-orochimaru .chapter-copy h2 {
+    font-size: 78px;
+  }
+  .chapter-orochimaru .chapter-copy h2 > em {
+    font-size: 91px;
+  }
+  .chapter-story {
+    max-width: 290px;
+  }
+  .chapter-tobi .chapter-copy {
+    margin-left: 51%;
+    width: 49%;
+  }
+  .chapter-tobi .chapter-copy h2 > em {
+    font-size: 24px;
+  }
+  .chapter-nav > div {
+    gap: 20px;
+  }
+}
+@media (max-width: 760px) {
+  .chapter-nav {
+    display: block;
+    padding: 23px 7%;
+  }
+  .chapter-nav > span {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 7px;
+  }
+  .chapter-nav > div {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .chapter-nav a {
+    font-size: 11px;
+    gap: 5px;
+  }
+  .chapter-nav a span {
+    font-size: 7px;
+  }
+  .character-chapter {
+    min-height: 0;
+    padding-bottom: 0;
+  }
+  .chapter-topline {
+    margin-inline: 7%;
+    padding: 24px 0 18px;
+  }
+  .chapter-topline .eyebrow {
+    font-size: 7px;
+    max-width: 230px;
+  }
+  .chapter-ring {
+    font-size: 6px;
+    gap: 8px;
+  }
+  .chapter-ring > span {
+    font-size: 25px;
+  }
+  .chapter-art,
+  .chapter-tobi .chapter-art,
+  .chapter-orochimaru .chapter-art {
+    inset: 78px 0 auto;
+    height: 375px;
+  }
+  .chapter-art img {
+    object-position: 50% 32%;
+  }
+  .chapter-art-shade,
+  .chapter-tobi .chapter-art-shade,
+  .chapter-orochimaru .chapter-art-shade {
+    background: linear-gradient(
+      0deg,
+      var(--chapter-bg),
+      transparent 50%,
+      transparent 75%,
+      var(--chapter-bg)
+    );
+  }
+  .chapter-canvas,
+  .chapter-tobi .chapter-canvas,
+  .chapter-orochimaru .chapter-canvas {
+    inset: 74px 3% auto;
+    height: 350px;
+  }
+  .chapter-copy,
+  .chapter-tobi .chapter-copy {
+    width: auto;
+    margin: 0;
+    padding: 330px 7% 0;
+  }
+  .chapter-copy > .eyebrow {
+    font-size: 7px;
+  }
+  .chapter-copy h2 {
+    margin-block: 18px 22px;
+    font-size: 88px;
+  }
+  .chapter-copy h2 > em {
+    font-size: 66px;
+  }
+  .chapter-tobi .chapter-copy h2 {
+    font-size: 96px;
+  }
+  .chapter-tobi .chapter-copy h2 > em {
+    font-size: 24px;
+  }
+  .chapter-orochimaru .chapter-copy h2 {
+    font-size: 75px;
+  }
+  .chapter-orochimaru .chapter-copy h2 > em {
+    font-size: 85px;
+  }
+  .chapter-lead {
+    font-size: 27px;
+  }
+  .chapter-story {
+    font-size: 12px;
+    max-width: 400px;
+    margin: 20px 0 24px;
+  }
+  .chapter-actions {
+    gap: 12px 18px;
+  }
+  .ability-button {
+    font-size: 10px;
+    min-height: 47px;
+    gap: 16px;
+    padding-inline: 16px;
+  }
+  .chapter-actions .text-button {
+    font-size: 9px;
+  }
+  .chapter-japanese,
+  .chapter-tobi .chapter-japanese {
+    top: 125px;
+    right: 7%;
+    left: auto;
+    font-size: 28px;
+  }
+  .chapter-bottom {
+    margin: 35px 7% 0;
+    flex-wrap: wrap;
+    gap: 23px 28px;
+    padding: 21px 0;
+  }
+  .chapter-bottom > div {
+    font-size: 10px;
+  }
+  .chapter-bottom .micro-label {
+    font-size: 6px;
+  }
+  .chapter-status {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    font-size: 7px;
+  }
+  .chapter-next {
+    padding: 4px 7% 28px;
+    font-size: 7px;
+  }
+}
+@media (max-width: 360px) {
+  .chapter-nav > div {
+    gap: 13px;
+  }
+  .chapter-nav a {
+    font-size: 10px;
+  }
+  .chapter-copy h2 {
+    font-size: 79px;
+  }
+  .chapter-copy h2 > em {
+    font-size: 60px;
+  }
+  .chapter-orochimaru .chapter-copy h2 {
+    font-size: 67px;
+  }
+  .chapter-orochimaru .chapter-copy h2 > em {
+    font-size: 77px;
+  }
+  .chapter-actions {
+    gap: 9px;
+  }
+}
