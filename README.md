@@ -6,4 +6,4 @@ A growing collection of creative landing-page experiments focused on strong visu
 
 | Project | Description | Link |
 | --- | --- | --- |
-| Akatsuki | An immersive, interactive tribute to the Akatsuki from Naruto Shippuden. | [View landing page](https://madhavbahl.github.io/pages/akatsuki/) |
+| Akatsuki | An immersive, interactive tribute to the Akatsuki from Naruto Shippuden. | [View landing page](https://theleanprogrammer.com/pages/akatsuki/) |
