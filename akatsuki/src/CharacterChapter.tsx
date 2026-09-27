@@ -25,6 +25,7 @@ import { chakraNatures } from './memberScenes'
 import { members, type Member } from './members'
 import './chapters.css'
 import './members.css'
+import { asset } from './asset'
 
 const chapters = {
   pain: {
@@ -210,7 +211,9 @@ export function CharacterChapter({
       <div className="chapter-art">
         <img
           src={
-            character === 'tobi' ? '/cutouts/tobi.webp' : `/${character}.webp`
+            character === 'tobi'
+              ? asset('cutouts/tobi.webp')
+              : asset(`${character}.webp`)
           }
           alt={member.name}
           width={character === 'tobi' ? 592 : portraitSizes[character][0]}

@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+import { asset } from './asset'
 
 export function createPortraitScene(
   canvas: HTMLCanvasElement,
@@ -34,7 +35,7 @@ export function createPortraitScene(
   geometry.setAttribute('aCenter', new THREE.BufferAttribute(centers, 3))
   geometry.setAttribute('aSeed', new THREE.BufferAttribute(seeds, 1))
   let disposed = false
-  const texture = new THREE.TextureLoader().load('/itachi.webp', () => {
+  const texture = new THREE.TextureLoader().load(asset('itachi.webp'), () => {
     if (!disposed) canvas.parentElement?.classList.add('portrait-ready')
   })
   texture.colorSpace = THREE.SRGBColorSpace

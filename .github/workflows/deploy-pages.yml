@@ -37,6 +37,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Stage Akatsuki site
+        run: |
+          mkdir -p ../pages-dist/akatsuki
+          cp -R dist/. ../pages-dist/akatsuki/
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
         with:
@@ -45,7 +50,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: akatsuki/dist
+          path: pages-dist
 
   deploy:
     environment:

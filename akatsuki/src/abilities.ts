@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import { createMemberModel, type MemberAbility } from './memberScenes'
+import { asset } from './asset'
 
 export type Ability = 'pain' | 'tobi' | 'orochimaru' | MemberAbility
 
@@ -121,7 +122,7 @@ export function createAbilityScene(
       shockwave.material.opacity = power * 0.7
     }
   } else if (ability === 'tobi') {
-    const cutout = new THREE.TextureLoader().load('/cutouts/tobi.webp', () => {
+    const cutout = new THREE.TextureLoader().load(asset('cutouts/tobi.webp'), () => {
       if (!disposed) {
         artworkReady = true
         needsRender = true

@@ -1,6 +1,7 @@
 import { useEffect, useEffectEvent, useRef, useState } from 'react'
 import { ArrowUpRight, Eye, Minus, Plus, Search, X } from 'lucide-react'
 import { members, type Member } from './members'
+import { asset } from './asset'
 
 export function MemberArchive({
   onSelect,
@@ -84,7 +85,7 @@ export function MemberArchive({
           >
             <div className="member-image">
               <img
-                src={`/${member.id}.webp`}
+                src={asset(`${member.id}.webp`)}
                 alt={member.name}
                 width="480"
                 height="560"
@@ -192,7 +193,7 @@ export function MemberDossier({
       </button>
       <div id="dialog-content">
         <div className="dossier-portrait">
-          <img src={`/${member.id}.webp`} alt={member.name} />
+          <img src={asset(`${member.id}.webp`)} alt={member.name} />
           <span className="dossier-number">
             {String(members.indexOf(member) + 1).padStart(2, '0')}
           </span>

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { ArrowDownRight, ArrowUpRight } from 'lucide-react'
 import { assemblyMembers, createAssemblyScene } from './assembly'
 import './hero.css'
+import { asset } from './asset'
 
 const lineup = [...assemblyMembers].sort((first, second) => first.x - second.x)
 
@@ -73,7 +74,7 @@ export function Hero({ motion }: { motion: boolean }) {
         {lineup.map((member) => (
           <img
             key={member.id}
-            src={`/cutouts/${member.id}.webp`}
+            src={asset(`cutouts/${member.id}.webp`)}
             alt={member.name}
             className={`assembly-fallback-${member.id}`}
           />

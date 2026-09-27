@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+import { asset } from './asset'
 
 export const assemblyMembers = [
   { id: 'kisame', name: 'Kisame', x: -4.3, depth: -1.8, height: 5.5 },
@@ -41,7 +42,7 @@ export function createAssemblyScene(
   const pointer = new THREE.Vector2()
   const figures = assemblyMembers.map((member, index) => {
     const texture = loader.load(
-      `/cutouts/${member.id}.webp`,
+      asset(`cutouts/${member.id}.webp`),
       () => {
         if (disposed) return
         const image = texture.image as HTMLImageElement

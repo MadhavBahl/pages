@@ -16,6 +16,7 @@ import { members, type Member } from './members'
 import { MemberArchive, MemberDossier } from './MemberArchive'
 import { CharacterChapter } from './CharacterChapter'
 import { chapterOrder } from './memberChapters'
+import { asset } from './asset'
 
 function CloudMark() {
   return (
@@ -232,7 +233,7 @@ function ItachiChapter({
     >
       <div className="itachi-image">
         <img
-          src="/itachi.webp"
+          src={asset('itachi.webp')}
           alt="Itachi Uchiha wearing the red-cloud Akatsuki cloak"
           width="1440"
           height="1080"
